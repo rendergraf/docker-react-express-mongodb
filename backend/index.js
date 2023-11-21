@@ -12,7 +12,7 @@ const express = require('express')
 const cors = require('cors')
 const { v4: uuidv4 } = require('uuid')
 const app = express()
-const PORT = 3210
+const PORT = 3030
 
 app.use(cors())
 

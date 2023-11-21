@@ -1,12 +1,12 @@
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR /backend-docker
 
-COPY package.json pnpm-lock.yaml /app/
+COPY package.json .
 
 RUN npm config set strict-ssl false
 RUN npm i -g pnpm
-RUN pnpm install
+RUN pnpm i
 
 COPY . .
 

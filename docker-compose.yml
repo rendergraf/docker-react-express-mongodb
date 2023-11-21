@@ -9,7 +9,7 @@ services:
       - '3210:3030'
     restart: always
     volumes:
-      - ./backend:/app
+      - ./backend:/backend-docker
     networks:
       - app-network
 
@@ -22,7 +22,7 @@ services:
       - "4321:4040"
     restart: always
     volumes:
-      - ./frontend:/app
+      - ./frontend:/frontend-docker
     networks:
       - app-network
 
