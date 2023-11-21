@@ -2,6 +2,8 @@ version: '3.8'
 services:
   backend:
     container_name: backend
+    depends_on:
+      - db
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -10,8 +12,17 @@ services:
     restart: always
     volumes:
       - ./backend:/backend-docker
+    environment:
+      DB_URL: mongodb://db/database
     networks:
       - app-network
+
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - database:/data/db
 
   frontend:
     container_name: frontend
@@ -25,6 +36,9 @@ services:
       - ./frontend:/frontend-docker
     networks:
       - app-network
+
+volumes:
+  database:
 
 networks:
   app-network:

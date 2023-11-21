@@ -1,56 +1,50 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"organizeImports": {
-		"enabled": true,
-		"include": [
-			"./src/**/*.jsx",
-			"./src/**/*.tsx",
-			"./src/**/*.ts"
-		]
+		"enabled": true
 	},
 	"linter": {
-		"enabled": true,
+		"enabled": false,
 		"rules": {
+			"suspicious": {
+				"noCommentText": {
+					"level": "off",
+					"options": {}
+				}
+			},
 			"style": {
 				"useBlockStatements": "error",
 				"useShorthandArrayType": "error",
-				"noShoutyConstants": "warn"
+				"noShoutyConstants": "warn",
+				"noUnusedTemplateLiteral": "off"
+			},
+			"a11y": {
+				"useAltText": "warn",
+				"noBlankTarget": {
+					"level": "warn",
+					"options": {}
+				},
+				"useButtonType": "warn"
 			}
 		},
-		"ignore": [
-			"./node_modules/**/*.*",
-			"./public/**/*.*",
-			"./dist/**/*.*"
-		]
+		"ignore": ["./node_modules/**/*.*", "./public/**/*.*", "./dist/**/*.*"]
 	},
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
 		"indentStyle": "tab",
+		"indentSize": 2,
 		"indentWidth": 2,
-		"lineWidth": 120,
-		"include": [
-			"./src/**/*.jsx",
-			"./src/**/*.tsx",
-			"./src/**/*.ts"
-		],
-		"ignore": [
-			"./node_modules/**/*.*",
-			"./public/**/*.*",
-			"./dist/**/*.*"
-		]
+		"lineWidth": 200,
+		"include": ["./src/**/*.jsx", "./src/**/*.tsx", "./src/**/*.ts"],
+		"ignore": ["./node_modules/**/*.*", "./public/**/*.*", "./dist/**/*.*"]
 	},
 	"javascript": {
-		"globals": [
-			"$",
-			"_",
-			"externalVariable"
-		],
-		"parser": {
-			"unsafeParameterDecoratorsEnabled": true
-		},
+		"globals": ["$", "_", "externalVariable"],
 		"formatter": {
+			"enabled": true,
 			"quoteStyle": "single",
+			"jsxQuoteStyle": "single",
 			"semicolons": "asNeeded",
 			"indentStyle": "tab",
 			"indentWidth": 2,
@@ -59,12 +53,17 @@
 	},
 	"json": {
 		"parser": {
-			"allowComments": true
+			"allowComments": true,
+			"allowTrailingCommas": true
 		},
 		"formatter": {
+			"enabled": true,
 			"indentStyle": "tab",
 			"indentWidth": 2,
 			"lineWidth": 120
 		}
+	},
+	"vcs": {
+		"enabled": true
 	}
 }
