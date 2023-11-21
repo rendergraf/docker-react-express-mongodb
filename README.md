@@ -5,8 +5,8 @@ This is only a template to start a project with a Docker container featuring a R
 we are using several libraries, here is the list of them:
 
 Dependencies
-@emotion/react version ^11.11.1
-@emotion/styled version ^11.11.0
+- **@emotion/react version ^11.11.1
+- **@emotion/styled version ^11.11.0
 @mui/icons-material version ^5.14.18
 @mui/material version ^5.14.18
 react version ^18.2.0
