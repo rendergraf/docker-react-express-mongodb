@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '3210:3030'
+    restart: always
+    volumes:
+      - ./backend:/app
+    networks:
+      - app-network
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4321:4040"
+    restart: always
+    volumes:
+      - ./frontend:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

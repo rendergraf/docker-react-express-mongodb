@@ -1,0 +1,70 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+	"organizeImports": {
+		"enabled": true,
+		"include": [
+			"./src/**/*.jsx",
+			"./src/**/*.tsx",
+			"./src/**/*.ts"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"style": {
+				"useBlockStatements": "error",
+				"useShorthandArrayType": "error",
+				"noShoutyConstants": "warn"
+			}
+		},
+		"ignore": [
+			"./node_modules/**/*.*",
+			"./public/**/*.*",
+			"./dist/**/*.*"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 120,
+		"include": [
+			"./src/**/*.jsx",
+			"./src/**/*.tsx",
+			"./src/**/*.ts"
+		],
+		"ignore": [
+			"./node_modules/**/*.*",
+			"./public/**/*.*",
+			"./dist/**/*.*"
+		]
+	},
+	"javascript": {
+		"globals": [
+			"$",
+			"_",
+			"externalVariable"
+		],
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		},
+		"formatter": {
+			"quoteStyle": "single",
+			"semicolons": "asNeeded",
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineWidth": 120
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		},
+		"formatter": {
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineWidth": 120
+		}
+	}
+}
