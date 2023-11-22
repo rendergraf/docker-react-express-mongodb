@@ -1,7 +1,9 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"organizeImports": {
-		"enabled": true
+		"enabled": true,
+		"include": ["./src/**/*.jsx", "./src/**/*.tsx", "./src/**/*.ts"],
+		"ignore": ["./node_modules/**/*.*", "./public/**/*.*", "./dist/**/*.*"]
 	},
 	"linter": {
 		"enabled": false,

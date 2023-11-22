@@ -1,0 +1,32 @@
+{
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"quickfix.biome": true,
+		"source.organizeImports.biome": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.foldingImportsByDefault": true,
+	"autoimport.filesToScan": "**/*.{ts,tsx,jsx}",
+	"autoimport.showNotifications": true,
+	"autoimport.useSemiColon": false,
+	"editor.scrollbar.vertical": "hidden",
+	"editor.overviewRulerBorder": false,
+	"editor.hideCursorInOverviewRuler": true,
+	"editor.linkedEditing": true,
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"editor.stickyScroll.enabled": true,
+	"editor.fontLigatures": true,
+	"workbench.sideBar.location": "right",
+	"workbench.editor.showTabs": "none"
+}
