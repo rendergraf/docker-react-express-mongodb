@@ -1,5 +1,5 @@
 FROM node:alpine as build
-WORKDIR /frontend-docker
+WORKDIR /frontend
 
 COPY package.json .
 RUN npm config set strict-ssl false
@@ -9,7 +9,7 @@ RUN pnpm i
 COPY . .
 
 # development environment
-CMD ["pnpm", "dev"]
+CMD ["pnpm", "run", "dev"]
 
 # production environment
 # RUN pnpm build

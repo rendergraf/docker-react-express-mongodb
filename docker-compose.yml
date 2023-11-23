@@ -2,8 +2,8 @@ version: '3.8'
 services:
   backend:
     container_name: backend
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -11,18 +11,20 @@ services:
       - '3210:3030'
     restart: always
     volumes:
-      - ./backend:/backend-docker
-    environment:
-      DB_URL: mongodb://db/database
+      - ./backend:/backend
+      - '/backend/node_modules'
+    command: pnpm dev
+    # environment:
+    #   DB_URL: mongodb://db/database
     networks:
       - app-network
 
-  db:
-    image: mongo:4.0-xenial
-    ports:
-      - 27017:27017
-    volumes:
-      - database:/data/db
+  # db:
+  #   image: mongo:4.0-xenial
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - database:/data/db
 
   frontend:
     container_name: frontend
@@ -33,12 +35,14 @@ services:
       - "4321:4040"
     restart: always
     volumes:
-      - ./frontend:/frontend-docker
+      - ./frontend:/frontend
+      - '/frontend/node_modules'
+    command: pnpm run dev
     networks:
       - app-network
 
-volumes:
-  database:
+# volumes:
+#   database:
 
 networks:
   app-network:

@@ -1,16 +1,16 @@
+import App from '@src/App.tsx'
+import store from '@store'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
-import App from './App.tsx'
-import store from './store'
 
-const container = document.getElementById('app')
-const root = createRoot(container)
+const container = document.getElementById('app') as HTMLElement;
+const root = createRoot(container) 
 
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<App tab="home" />
+			<App />
 		</Provider>
 	</React.StrictMode>,
 )

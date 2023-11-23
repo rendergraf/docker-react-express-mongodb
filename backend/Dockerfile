@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /backend-docker
+WORKDIR /backend
 
 COPY package.json .
 
@@ -10,4 +10,4 @@ RUN pnpm i
 
 COPY . .
 
-CMD ["pnpm", "run", "dev"]
+CMD ["pnpm", "dev"]

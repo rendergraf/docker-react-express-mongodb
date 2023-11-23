@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { UserType } from '/src/types/'
+import { UserType } from '@types'
 
-const initialState: UserType = {
-	name: '',
-	last_name: '',
-	email: '',
+const initialState:UserType = {
+	user: {
+		name: '',
+		last_name: '',
+		email: '',
+	}
 }
 
 const userSlice = createSlice({
@@ -15,16 +17,20 @@ const userSlice = createSlice({
 			const { name, last_name, email } = action.payload
 			return {
 				...state,
-				name,
-				last_name,
-				email,
+				user: {
+					name,
+					last_name,
+					email
+				}
 			}
 		},
 		removeUser: (state) => {
 			return {
-				name: '',
-				last_name: '',
-				email: '',
+				user: {
+					name: '',
+					last_name: '',
+					email: ''
+				}
 			}
 		},
 	},

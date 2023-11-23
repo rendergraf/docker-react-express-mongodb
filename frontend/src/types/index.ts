@@ -3,7 +3,15 @@ export interface NumberType {
 }
 
 export interface UserType {
-	name: string
-	last_name: string
-	email: string
+	user: {
+		name: string
+		last_name: string
+		email: string
+	}
+}
+
+export interface CounterControlsProps {
+	count: number;
+	onIncrement: () => void;
+	onDecrement: () => void;
 }

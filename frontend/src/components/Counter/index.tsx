@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 
 // Material-UI components
 import Box from '@mui/material/Box'
@@ -6,12 +6,15 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
+// Import Types
+import { CounterControlsProps, UserType } from '@types'
+
 // Custom Hooks
-import { useAppDispatch, useAppSelector } from '/src/hooks'
+import { useAppDispatch, useAppSelector } from '@hooks'
 
 //Redux Reducers
-import { decrement, increment } from '/src/store/reducers/counterSlice'
-import { addUser, removeUser } from '/src/store/reducers/userSlice'
+import { decrement, increment } from '@reducers/counterSlice'
+import { addUser, removeUser } from '@reducers/userSlice'
 
 const Counter = () => {
 	const count = useAppSelector((state) => state.counter.value)
@@ -60,7 +63,7 @@ const Counter = () => {
 	)
 }
 
-const CounterControls = ({ count, onIncrement, onDecrement }) => {
+const CounterControls:FC<CounterControlsProps> = ({ count, onIncrement, onDecrement }) => {
 	return (
 		<Box display="flex" alignItems="center" justifyContent="center" my={2}>
 			<Button variant="contained" onClick={onDecrement}>
@@ -76,13 +79,14 @@ const CounterControls = ({ count, onIncrement, onDecrement }) => {
 	)
 }
 
-const UserInfo = ({ user }) => {
+const UserInfo:FC<UserType> = ({ user }) => {
+	console.log(user)
 	return (
 		<Box my={2}>
 			<Typography variant="h6">
-				Name: {user.name} <br />
-				Last Name: {user.last_name} <br />
-				Email: {user.email}
+				Name: {user.user.name} <br />
+				Last Name: {user.user.last_name} <br />
+				Email: {user.user.email}
 			</Typography>
 		</Box>
 	)
