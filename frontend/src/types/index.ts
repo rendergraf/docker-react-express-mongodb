@@ -3,11 +3,9 @@ export interface NumberType {
 }
 
 export interface UserType {
-	user: {
-		name: string
-		last_name: string
-		email: string
-	}
+	name: string
+	last_name: string
+	email: string
 }
 
 export interface CounterControlsProps {
