@@ -13,3 +13,4 @@ export interface CounterControlsProps {
 	onIncrement: () => void;
 	onDecrement: () => void;
 }
+export type { RootState, AppDispatch } from '@store';

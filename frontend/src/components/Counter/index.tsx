@@ -2,12 +2,12 @@ import { useAppDispatch, useAppSelector } from '@hooks';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { decrement, increment } from '@reducers/counterSlice';
 import { addUser, removeUser } from '@reducers/userSlice';
-import { CounterControlsProps, UserType } from '@types';
+import type { CounterControlsProps, RootState, UserType } from '@types';
 import React, { FC, useCallback, useState } from 'react';
 
 const Counter = () => {
-  const count = useAppSelector((state) => state.counter.value);
-  const user = useAppSelector((state) => state.user) as UserType;
+  const count = useAppSelector((state: RootState) => state.counter.value);
+  const user = useAppSelector((state: RootState) => state.user);
   const dispatch = useAppDispatch();
 
   const initialState: UserType = {

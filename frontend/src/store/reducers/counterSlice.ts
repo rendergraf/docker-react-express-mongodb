@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { NumberType } from '@types'
+import type { NumberType } from '@types'
 
 const initialState: NumberType = {
 	value: 0,
